@@ -1,0 +1,241 @@
+/* ===== KEYFRAME ANIMATIONS ===== */
+
+/* Loading Logo Pulse */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.loading-logo {
+    animation: pulse 1.5s infinite;
+}
+
+/* Download Button Pulse */
+@keyframes pulseBtn {
+
+    0%,
+    100% {
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 8px 35px rgba(102, 126, 234, 0.7);
+    }
+}
+
+.download-cv {
+    animation: pulseBtn 2s infinite;
+}
+
+/* Hero Title Shimmer */
+@keyframes shimmer {
+
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(20deg);
+    }
+}
+
+.hero h1 {
+    animation: shimmer 3s infinite;
+}
+
+/* Profile Image Shine Effect */
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+.profile-image::before {
+    animation: shine 3s infinite;
+}
+
+/* Profile Image Float */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.profile-image {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Scroll Indicator Bounce */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
+
+/* Timeline Glow Effect */
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.8);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(102, 126, 234, 1);
+    }
+}
+
+.timeline-item::before {
+    animation: glow 2s infinite;
+}
+
+/* Modal Slide In */
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    animation: modalSlideIn 0.5s ease;
+}
+
+/* ===== SCROLL REVEAL ANIMATIONS ===== */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-reveal {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scale-reveal.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== TRANSITION DELAYS ===== */
+.skill-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.skill-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.skill-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.skill-delay-4 {
+    transition-delay: 0.4s;
+}
+
+.skill-delay-5 {
+    transition-delay: 0.5s;
+}
+
+.skill-delay-6 {
+    transition-delay: 0.6s;
+}
+
+.project-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.project-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.project-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.contact-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.contact-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.contact-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.contact-delay-4 {
+    transition-delay: 0.4s;
+}

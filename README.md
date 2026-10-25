@@ -1,5 +1,7 @@
-# kabishou11.github.io
+# www.kabishou.com
 
-GitHub Pages site for custom domain `www.kabishou.com`.
+Personal site for **Zhu Lei** ([kabishou11](https://github.com/kabishou11)).
 
-Do not point hermes / n8n / ssh / vnc here.
+Theme based on [Esperadoce/CV](https://github.com/Esperadoce/CV) (MIT). See `LICENSE` and `NOTICE.md`.
+
+CNAME: `www.kabishou.com`
