@@ -1,7 +1,9 @@
 # www.kabishou.com
 
-Personal site for **Zhu Lei** ([kabishou11](https://github.com/kabishou11)).
+Static personal site for **Peter Zhu** (`kabishou11`).
 
-Theme based on [Esperadoce/CV](https://github.com/Esperadoce/CV) (MIT). See `LICENSE` and `NOTICE.md`.
+- Deploy: push contents of this folder to `kabishou11/kabishou11.github.io` (Pages root).
+- CNAME: `www.kabishou.com`
+- Visual language: original HTML/CSS inspired by [pepper](https://github.com/wangziyun20001018-ops/pepper) (minimal off-white, pill nav, restrained type). No pepper source reused; pepper has no LICENSE.
 
-CNAME: `www.kabishou.com`
+Preview: open `index.html` locally or serve the folder.
