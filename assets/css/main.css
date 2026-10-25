@@ -1,5 +1,5 @@
-/* Peter Zhu personal site — original CSS inspired by pepper's visual language
-   (off-white + dots, Helvetica, pill nav, sharp content). No pepper code reused. */
+/* Peter Zhu personal site. Hero lens / tilt / flip follows pepper's HeroSection.
+   Remaining layout is original (off-white, pill nav, hobbies, work, stickers). */
 
 :root {
   --bg: #fcfcfb;
@@ -37,6 +37,7 @@ body {
   background-color: var(--bg);
   background-image: radial-gradient(circle, var(--dot) 1px, transparent 1px);
   background-size: var(--dot-size) var(--dot-size);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
 }
@@ -99,6 +100,8 @@ svg {
   -webkit-mask-image: linear-gradient(to bottom, #000 58%, transparent);
   pointer-events: none;
   z-index: -1;
+  opacity: 0;
+  transition: opacity 220ms ease;
 }
 
 .site-header a,
@@ -112,6 +115,7 @@ svg {
   font-weight: 700;
   letter-spacing: 0.16em;
   line-height: 1;
+  transition: color 280ms ease;
 }
 
 .nav {
@@ -178,98 +182,336 @@ main {
   z-index: 0;
 }
 
-/* Hero */
+body.is-scrolled:not(.hero-flipped) .site-header::before {
+  opacity: 1;
+}
+
+body.hero-flipped .site-header::before {
+  opacity: 0;
+}
+
+body.hero-flipped .logo {
+  color: #fff;
+}
+
+body.hero-flipped .contact-pill {
+  color: #111;
+  background: #fff;
+  box-shadow: 0 5px 16px rgb(0 0 0 / 18%);
+}
+
+/* Hero — pepper lens / tilt / flip */
 .hero {
+  --title-middle-rotate-x: 0deg;
+  --title-middle-rotate-y: 0deg;
+  --title-middle-rotate-z: 0deg;
+  --title-middle-x: 0px;
+  --title-middle-y: 0px;
+  --title-rotate-x: 0deg;
+  --title-rotate-y: 0deg;
+  --title-rotate-z: 0deg;
+  --title-signature-rotate-x: 0deg;
+  --title-signature-rotate-y: 0deg;
+  --title-signature-rotate-z: 0deg;
+  --title-signature-x: 0px;
+  --title-signature-y: 0px;
+  --title-x: 0px;
+  --title-y: 0px;
+
   position: relative;
-  display: flex;
+  width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 120px var(--pad) 80px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   overflow: hidden;
+  background-color: #fefefe;
+  background-image: radial-gradient(
+    circle,
+    rgb(0 0 0 / 8%) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  cursor: pointer;
+  perspective: 1200px;
+  touch-action: pan-y;
 }
 
-.hero-kicker {
-  margin: 0 0 18px;
-  color: var(--muted-soft);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+.hero:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: -4px;
 }
 
-.hero h1 {
+.hero-flip {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 700ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.hero-flip.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.hero-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.hero-front {
+  display: grid;
+  place-items: center;
+  background: transparent;
+  transform: rotateX(0deg) translateZ(0.5px);
+}
+
+.hero-pattern {
+  display: none;
+}
+
+.hero-pattern-row {
+  width: max-content;
+  min-width: 140%;
+  white-space: nowrap;
+}
+
+.hero-pattern-row.is-offset {
+  transform: translateX(-2em);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  align-items: center;
+  flex-direction: column;
+  gap: 18px;
+  pointer-events: none;
+  transform: translate(-50%, -50%)
+    perspective(1200px)
+    translate3d(var(--title-x), var(--title-y), 0)
+    rotateX(var(--title-rotate-x))
+    rotateY(var(--title-rotate-y))
+    rotateZ(var(--title-rotate-z));
+  transform-origin: center;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 2;
   margin: 0;
-  font-size: clamp(42px, 9vw, 88px);
+  color: #000;
+  font-family: "Helvetica Neue", "PingFang SC", Arial, sans-serif;
+  font-size: clamp(28px, 6.1vw, 96px);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: 0.02em;
+  text-align: center;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  white-space: nowrap;
 }
 
-.hero h1 .zh {
-  display: block;
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 0.28em;
-  font-weight: 500;
-  letter-spacing: 0.28em;
+.hero-title-base,
+.hero-title-middle,
+.hero-title-signature {
+  display: inline-block;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
-.hero-sub {
-  margin: 22px 0 0;
-  max-width: 34em;
-  color: var(--muted-soft);
-  font-size: clamp(15px, 2vw, 18px);
+.hero-title-middle {
+  position: relative;
+  margin-left: 0.08em;
+  transform: translate3d(var(--title-middle-x), var(--title-middle-y), 0)
+    rotateX(var(--title-middle-rotate-x))
+    rotateY(var(--title-middle-rotate-y))
+    rotateZ(var(--title-middle-rotate-z));
+}
+
+.hero-title-signature {
+  margin-left: 0.12em;
+  font-style: normal;
+  font-weight: 700;
+  transform: translate3d(var(--title-signature-x), var(--title-signature-y), 0)
+    rotateX(var(--title-signature-rotate-x))
+    rotateY(var(--title-signature-rotate-y))
+    rotateZ(var(--title-signature-rotate-z));
+}
+
+.hero-subtitle {
+  margin: 0;
+  color: rgb(0 0 0 / 48%);
+  font-size: 17px;
   font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+  letter-spacing: 0.025em;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
-.hero-meta {
-  display: flex;
-  margin-top: 36px;
-  flex-wrap: wrap;
-  gap: 10px 28px;
-  justify-content: center;
-  color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-}
+.hero-lens {
+  --lens-radius: 0px;
+  --lens-x: -300px;
+  --lens-y: -300px;
 
-.scroll-hint {
   position: absolute;
-  bottom: 40px;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  color: #fff;
+  background: #000;
+  clip-path: circle(var(--lens-radius) at var(--lens-x) var(--lens-y));
+  -webkit-clip-path: circle(var(--lens-radius) at var(--lens-x) var(--lens-y));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease-out;
+  will-change: clip-path, opacity;
+}
+
+.hero-pattern.is-inverted {
+  color: rgb(255 255 255 / 12%);
+  font-size: 32px;
+}
+
+.hero-title.is-inverted {
+  color: #fff;
+}
+
+.hero-title.is-inverted .hero-title-signature {
+  font-style: normal;
+}
+
+.hero-subtitle.is-inverted {
+  color: rgb(255 255 255 / 58%);
+}
+
+.hero-prompt {
+  position: absolute;
+  bottom: 44px;
   left: 50%;
+  z-index: 2;
   margin: 0;
   color: rgb(0 0 0 / 38%);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.22em;
+  line-height: 1.4;
   transform: translateX(-50%);
-  animation: floatY 2.4s ease-in-out infinite;
+  white-space: nowrap;
+  animation: scrollFloat 2.4s ease-in-out infinite;
 }
 
-@keyframes floatY {
+.hero-prompt.is-inverted {
+  z-index: 5;
+  color: rgb(255 255 255 / 48%);
+}
+
+@keyframes scrollFloat {
   0%,
   100% {
     transform: translate(-50%, 0);
   }
+
   50% {
-    transform: translate(-50%, 6px);
+    transform: translate(-50%, 3px);
   }
 }
 
-@keyframes floatYStart {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
-  }
+.hero-about {
+  display: flex;
+  padding: 108px 64px 34px;
+  flex-direction: column;
+  color: #fff;
+  background: #000;
+  transform: rotateX(180deg) translateZ(0.5px);
+}
+
+.hero-about-head {
+  display: flex;
+  margin-bottom: 26px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.hero-about-title {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.hero-about-back {
+  padding-top: 7px;
+  color: rgb(255 255 255 / 62%);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.hero-about-copy {
+  flex: 1;
+  min-height: 0;
+  max-width: 1080px;
+  column-count: 2;
+  column-gap: 56px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  color: rgb(255 255 255 / 88%);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.72;
+  text-align: justify;
+}
+
+.hero-about-copy p,
+.hero-about-copy ul {
+  margin: 0 0 16px;
+  break-inside: avoid;
+}
+
+.hero-about-copy p:last-child,
+.hero-about-copy ul:last-child {
+  margin-bottom: 0;
+}
+
+.hero-about-projects {
+  padding-left: 1.15em;
+}
+
+.hero-about-projects a {
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 1px solid rgb(255 255 255 / 38%);
+}
+
+.hero-about-projects a:hover,
+.hero-about-projects a:focus-visible {
+  border-bottom-color: #fff;
+  outline: none;
+}
+
+.hero-about-sign {
+  display: block;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hero-front .snorlax--sleep {
+  z-index: 4;
 }
 
 /* Sections */
@@ -700,6 +942,117 @@ main {
   transition-delay: 180ms;
 }
 
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: clamp(28px, 6vw, 72px);
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .hero-about {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    gap: 14px;
+  }
+
+  .hero-title {
+    font-size: clamp(26px, 7vw, 56px);
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+  .hero-prompt {
+    font-size: 10px;
+  }
+
+  .hero-about {
+    padding: 88px 32px 28px;
+  }
+
+  .hero-about-title {
+    font-size: 44px;
+  }
+
+  .hero-about-copy {
+    column-gap: 30px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-pattern {
+    inset: -20px -100px;
+    font-size: 30px;
+    line-height: 1.7;
+  }
+
+  .hero-pattern.is-inverted {
+    font-size: 22px;
+  }
+
+  .hero-title {
+    font-size: clamp(22px, 8.2vw, 34px);
+  }
+
+  .hero-content {
+    gap: 8px;
+  }
+
+  .hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-prompt {
+    bottom: 40px;
+    font-size: 8px;
+  }
+
+  .hero-about {
+    padding: 72px 14px 12px;
+  }
+
+  .hero-about-head {
+    margin-bottom: 8px;
+  }
+
+  .hero-about-title {
+    font-size: 22px;
+  }
+
+  .hero-about-back {
+    padding-top: 3px;
+    font-size: 8px;
+  }
+
+  .hero-about-copy {
+    column-count: 1;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .hero-about-copy p,
+  .hero-about-copy ul {
+    margin-bottom: 10px;
+  }
+
+  .hero-about-sign {
+    margin-top: 6px;
+    font-size: 11px;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .nav a:hover {
     background: rgb(0 0 0 / 6%);
@@ -797,23 +1150,6 @@ main {
     display: none;
   }
 
-  .hero {
-    padding-top: 100px;
-    padding-bottom: 108px;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .hero-meta {
-    justify-content: flex-start;
-  }
-
-  .scroll-hint {
-    left: var(--pad);
-    transform: none;
-    animation: floatYStart 2.4s ease-in-out infinite;
-  }
-
   .snorlax--sleep {
     left: auto;
     right: max(4px, calc(var(--pad) - 8px));
@@ -835,9 +1171,30 @@ main {
     scroll-behavior: auto;
   }
 
-  .scroll-hint,
+  .hero-flip {
+    transition-duration: 1ms;
+  }
+
+  .hero-lens {
+    display: none;
+  }
+
+  .hero-content {
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-title-middle,
+  .hero-title-signature {
+    transform: none;
+  }
+
+  .hero-prompt,
   .snorlax img {
     animation: none;
+  }
+
+  .logo {
+    transition: none;
   }
 
   .reveal.is-waiting,
@@ -853,5 +1210,24 @@ main {
   .work-card,
   .work-card .link-row span {
     transition: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .hero-lens {
+    display: none;
+  }
+
+  .hero-content {
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-title-middle,
+  .hero-title-signature {
+    transform: none;
+  }
+
+  .hero-prompt-move {
+    display: none;
   }
 }

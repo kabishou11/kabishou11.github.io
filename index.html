@@ -30,52 +30,127 @@
   </header>
 
   <main id="main">
-    <section id="home" class="hero">
-      <p class="hero-kicker">Engineer · Open source · Suzhou</p>
-      <h1>
-        Hello, I’m Peter Zhu
-        <span class="zh">朱磊 · kabishou11</span>
-      </h1>
-      <p class="hero-sub">
-        I work on practical inference and retrieval systems, contribute upstream,
-        and ship tools people can run.
-      </p>
-      <div class="hero-meta">
-        <span>ECARX · Geely Holding</span>
-        <span>Suzhou, China</span>
-        <span>GitHub @kabishou11</span>
+    <section
+      id="home"
+      class="hero"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      aria-label="View about Peter Zhu"
+    >
+      <div class="hero-flip">
+        <div class="hero-face hero-front">
+          <div class="hero-pattern" aria-hidden="true">
+            <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+          </div>
+
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="hero-title-base">Hello, </span>
+              <span class="hero-title-middle">I’m</span>
+              <span class="hero-title-signature"> Peter Zhu</span>
+            </h1>
+            <p class="hero-subtitle">Engineer · Open source · Suzhou</p>
+          </div>
+
+          <figure class="snorlax snorlax--sleep" aria-hidden="true">
+            <img
+              src="assets/img/snorlax/sleep-side.png"
+              alt=""
+              width="357"
+              height="271"
+              decoding="async"
+            />
+          </figure>
+
+          <p class="hero-prompt">SCROLL / <span class="hero-prompt-move">MOVE / </span>CLICK</p>
+
+          <div class="hero-lens" aria-hidden="true">
+            <div class="hero-pattern is-inverted">
+              <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+              <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+              <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+              <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+              <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+              <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+              <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+              <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+              <div class="hero-pattern-row">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+              <div class="hero-pattern-row is-offset">P E T E R Z H U P E T E R Z H U P E T E R Z H U</div>
+            </div>
+            <div class="hero-content">
+              <p class="hero-title is-inverted">
+                <span class="hero-title-base">你好，</span>
+                <span class="hero-title-middle">我是</span>
+                <span class="hero-title-signature"> 朱磊</span>
+              </p>
+              <p class="hero-subtitle is-inverted">工程师 · 开源 · 苏州</p>
+            </div>
+            <p class="hero-prompt is-inverted">SCROLL / <span class="hero-prompt-move">MOVE / </span>CLICK</p>
+          </div>
+        </div>
+
+        <div class="hero-face hero-about" inert>
+          <div class="hero-about-head">
+            <h2 class="hero-about-title">关于我</h2>
+            <span class="hero-about-back">点击返回 · click to return</span>
+          </div>
+          <div class="hero-about-copy">
+            <p lang="zh-Hans">
+              我是 Peter Zhu（朱磊），在苏州做工程师。白天在 ECARX（吉利控股）里把推理和检索做成能上线的系统：模型要跑得稳，搜索在关键词和向量对不上的时候也要靠得住。
+            </p>
+            <p>
+              Most days go into production inference and retrieval at ECARX — serving models efficiently, and keeping search honest when keyword and vector signals disagree. I would rather talk about what shipped and what broke.
+            </p>
+            <p lang="zh-Hans">
+              开源是正经工作的一部分。我给上游修过东西，也自己养了几个能直接跑的仓库：
+            </p>
+            <ul class="hero-about-projects">
+              <li>
+                <a href="https://github.com/kabishou11/deepinfer-hopper" target="_blank" rel="noopener noreferrer">deepinfer-hopper</a>
+                — Hopper / H200 inference
+              </li>
+              <li>
+                <a href="https://github.com/kabishou11/os-hybrid-kit" target="_blank" rel="noopener noreferrer">os-hybrid-kit</a>
+                — OpenSearch hybrid search (BM25 + kNN)
+              </li>
+              <li>
+                <a href="https://github.com/kabishou11/zvec-grep" target="_blank" rel="noopener noreferrer">zvec-grep</a>
+                — local workspace search
+              </li>
+            </ul>
+            <p>
+              Off the keyboard I lift, walk the hills around Suzhou, and cook for people I like feeding. No performance — just a life next to the work.
+            </p>
+          </div>
+          <strong class="hero-about-sign">PETER ZHU / 朱磊</strong>
+        </div>
       </div>
-      <figure class="snorlax snorlax--sleep" aria-hidden="true">
-        <img
-          src="assets/img/snorlax/sleep-side.png"
-          alt=""
-          width="357"
-          height="271"
-          decoding="async"
-        />
-      </figure>
-      <p class="scroll-hint">SCROLL</p>
     </section>
 
     <section id="about" class="section">
       <div class="section-inner">
         <p class="section-label">About</p>
-        <h2>What I’m doing lately</h2>
+        <h2>Facts, then the rest of the week</h2>
         <div class="about-grid">
           <div class="about-copy reveal">
             <p>
-              I’m Peter Zhu (朱磊), an engineer based in Suzhou. At ECARX I spend most days
-              on systems that have to work in production — serving models efficiently,
-              and making search and retrieval reliable when keyword and vector signals disagree.
+              I’m Peter Zhu (朱磊), in Suzhou. The longer note is on the home card —
+              click the hero to flip it. This page keeps the facts, hobbies, and
+              projects in one place.
             </p>
             <p>
-              Outside work I contribute to open-source projects and maintain a few focused
-              repositories of my own. I care about readable code, reproducible benches,
-              and small libraries that fit into existing stacks without ceremony.
-            </p>
-            <p>
-              If you’re looking for a long list of buzzwords, this isn’t that page.
-              Prefer talking about what shipped and what broke.
+              Work happens at ECARX. Outside of that I keep a few focused repositories,
+              and I would rather ship something you can run than a long list of slogans.
             </p>
           </div>
           <div class="about-side-col">

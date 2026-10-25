@@ -4,6 +4,7 @@ Static personal site for **Peter Zhu** (`kabishou11`).
 
 - Deploy: push contents of this folder to `kabishou11/kabishou11.github.io` (Pages root).
 - CNAME: `www.kabishou.com`
-- Visual language: original HTML/CSS inspired by [pepper](https://github.com/wangziyun20001018-ops/pepper) (minimal off-white, pill nav, restrained type). No pepper source reused; pepper has no LICENSE.
+- First screen: vanilla port of the [pepper](https://github.com/wangziyun20001018-ops/pepper) hero (pointer lens, title tilt, click-to-flip). Pepper ships no LICENSE.
+- Below the fold: About, hobbies, selected work, contact, Snorlax sticker accents.
 
 Preview: open `index.html` locally or serve the folder.
