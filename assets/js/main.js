@@ -21,4 +21,62 @@
 
   window.addEventListener("scroll", setActive, { passive: true });
   setActive();
+
+  var reduceMotion = false;
+  try {
+    reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  } catch (e) {
+    reduceMotion = false;
+  }
+
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  if (!revealEls.length) return;
+
+  function showAll() {
+    revealEls.forEach(function (el) {
+      el.classList.add("is-in");
+      el.classList.remove("is-waiting", "can-motion");
+    });
+  }
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    showAll();
+    return;
+  }
+
+  var io;
+  try {
+    io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          el.classList.add("is-in");
+          el.classList.remove("is-waiting");
+          io.unobserve(el);
+        });
+      },
+      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+    );
+  } catch (err) {
+    showAll();
+    return;
+  }
+
+  revealEls.forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.92) {
+      el.classList.add("is-in");
+    } else {
+      el.classList.add("is-waiting");
+    }
+  });
+
+  requestAnimationFrame(function () {
+    revealEls.forEach(function (el) {
+      if (!el.classList.contains("is-waiting")) return;
+      el.classList.add("can-motion");
+      io.observe(el);
+    });
+  });
 })();

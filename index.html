@@ -45,6 +45,15 @@
         <span>Suzhou, China</span>
         <span>GitHub @kabishou11</span>
       </div>
+      <figure class="snorlax snorlax--sleep" aria-hidden="true">
+        <img
+          src="assets/img/snorlax/sleep-side.png"
+          alt=""
+          width="357"
+          height="271"
+          decoding="async"
+        />
+      </figure>
       <p class="scroll-hint">SCROLL</p>
     </section>
 
@@ -53,7 +62,7 @@
         <p class="section-label">About</p>
         <h2>What I’m doing lately</h2>
         <div class="about-grid">
-          <div class="about-copy">
+          <div class="about-copy reveal">
             <p>
               I’m Peter Zhu (朱磊), an engineer based in Suzhou. At ECARX I spend most days
               on systems that have to work in production — serving models efficiently,
@@ -69,28 +78,91 @@
               Prefer talking about what shipped and what broke.
             </p>
           </div>
-          <dl class="about-side">
-            <dt>Name</dt>
-            <dd>Peter Zhu / 朱磊</dd>
-            <dt>Handle</dt>
-            <dd>kabishou11</dd>
-            <dt>Location</dt>
-            <dd>Suzhou, China</dd>
-            <dt>Work</dt>
-            <dd>ECARX (Geely Holding)</dd>
-            <dt>Focus</dt>
-            <dd>Inference · retrieval · open source</dd>
-          </dl>
+          <div class="about-side-col">
+            <dl class="about-side reveal">
+              <dt>Name</dt>
+              <dd>Peter Zhu / 朱磊</dd>
+              <dt>Handle</dt>
+              <dd>kabishou11</dd>
+              <dt>Location</dt>
+              <dd>Suzhou, China</dd>
+              <dt>Work</dt>
+              <dd>ECARX (Geely Holding)</dd>
+              <dt>Focus</dt>
+              <dd>Inference · retrieval · open source</dd>
+            </dl>
+            <figure class="snorlax snorlax--sit" aria-hidden="true">
+              <img
+                src="assets/img/snorlax/sit-belly.png"
+                alt=""
+                width="295"
+                height="302"
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+
+        <div class="hobbies">
+          <p class="section-label">Hobbies</p>
+          <div class="hobby-list">
+            <article class="hobby reveal">
+              <h3>Fitness <span lang="zh-Hans">健身</span></h3>
+              <p>
+                Weights a few evenings a week. Nothing fancy — just so sitting all day
+                doesn’t get the last word.
+              </p>
+            </article>
+            <article class="hobby reveal">
+              <h3>Hiking <span lang="zh-Hans">徒步</span></h3>
+              <p>
+                When the week lets go, I walk. Hills around Suzhou, or a longer trail
+                if I can steal a weekend.
+              </p>
+            </article>
+            <article class="hobby hobby--cook reveal">
+              <h3>Cooking <span lang="zh-Hans">做饭</span></h3>
+              <p>
+                I cook for the people I like feeding. Simple pots, slow evenings,
+                more rice than recipes.
+              </p>
+              <figure class="snorlax snorlax--eat" aria-hidden="true">
+                <img
+                  src="assets/img/snorlax/eat-sign.png"
+                  alt=""
+                  width="278"
+                  height="286"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="work" class="section">
       <div class="section-inner">
-        <p class="section-label">Selected work</p>
-        <h2>Recent projects</h2>
+        <div class="section-head">
+          <div>
+            <p class="section-label">Selected work</p>
+            <h2>Recent projects</h2>
+          </div>
+          <figure class="snorlax snorlax--wave" aria-hidden="true">
+            <img
+              src="assets/img/snorlax/wave-back.png"
+              alt=""
+              width="356"
+              height="281"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+        </div>
         <div class="work-list">
-          <a class="work-card" href="https://github.com/kabishou11/deepinfer-hopper" target="_blank" rel="noopener noreferrer">
+          <a class="work-card reveal" href="https://github.com/kabishou11/deepinfer-hopper" target="_blank" rel="noopener noreferrer">
             <div class="work-card-top">
               <h3>deepinfer-hopper</h3>
               <span class="tag">Python · CUDA</span>
@@ -102,7 +174,7 @@
             <div class="link-row">View on GitHub <span>→</span></div>
           </a>
 
-          <a class="work-card" href="https://github.com/kabishou11/os-hybrid-kit" target="_blank" rel="noopener noreferrer">
+          <a class="work-card reveal" href="https://github.com/kabishou11/os-hybrid-kit" target="_blank" rel="noopener noreferrer">
             <div class="work-card-top">
               <h3>os-hybrid-kit</h3>
               <span class="tag">Python · OpenSearch</span>
@@ -114,7 +186,7 @@
             <div class="link-row">View on GitHub <span>→</span></div>
           </a>
 
-          <a class="work-card" href="https://github.com/kabishou11/zvec-grep" target="_blank" rel="noopener noreferrer">
+          <a class="work-card reveal" href="https://github.com/kabishou11/zvec-grep" target="_blank" rel="noopener noreferrer">
             <div class="work-card-top">
               <h3>zvec-grep</h3>
               <span class="tag">Rust · CLI</span>
@@ -133,14 +205,14 @@
       <div class="section-inner contact-block">
         <p class="section-label">Contact</p>
         <h2>Find me</h2>
-        <div class="contact-links">
+        <div class="contact-links reveal">
           <a href="https://github.com/kabishou11" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.kabishou.com">www.kabishou.com</a>
           <a href="https://x.com/Zlxhappy0_0" target="_blank" rel="noopener noreferrer">X · @Zlxhappy0_0</a>
           <a href="https://xhslink.cn/o/1bGkastHIJd" target="_blank" rel="noopener noreferrer">Xiaohongshu / 小红书</a>
           <a href="mailto:woicyou@gmail.com">Email</a>
         </div>
-        <p class="email-line">
+        <p class="email-line reveal">
           Prefer email?
           <a href="mailto:woicyou@gmail.com">woicyou@gmail.com</a>
         </p>
@@ -149,9 +221,21 @@
   </main>
 
   <footer class="site-footer">
-    <div class="section-inner">
-      <strong>PETER ZHU</strong>
-      <span>© <span id="y"></span> · kabishou11 · Suzhou</span>
+    <div class="section-inner footer-inner">
+      <div class="footer-copy">
+        <strong>PETER ZHU</strong>
+        <span>© <span id="y"></span> · kabishou11 · Suzhou</span>
+      </div>
+      <figure class="snorlax snorlax--curl" aria-hidden="true">
+        <img
+          src="assets/img/snorlax/curl-ball.png"
+          alt=""
+          width="384"
+          height="270"
+          decoding="async"
+          loading="lazy"
+        />
+      </figure>
     </div>
   </footer>
 
