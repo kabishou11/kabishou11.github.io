@@ -1,440 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zhu Lei (kabishou11) — LLM serving, RAG, and agent systems. Ships production stacks at ECARX (Geely Holding Group), Suzhou. Upstream contributor to Dify, AG2, RAGFlow, FlashRAG, AgentScope, and more.">
-    <meta name="author" content="Zhu Lei">
-    <meta name="color-scheme" content="light dark">
-    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-    <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#667eea">
-    <link rel="manifest" href="manifest.webmanifest">
-    <meta name="msapplication-TileColor" content="#667eea">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="keywords"
-        content="Zhu Lei, kabishou11, LLM, RAG, Agent, OpenSearch, Dify, RAGFlow, FlashRAG, AgentScope, ECARX, Suzhou, Portfolio">
-    <meta name="geo.region" content="CN-JS">
-    <meta name="geo.placename" content="Suzhou, Jiangsu, China">
-    <link rel="canonical" href="https://www.kabishou.com/">
-    <link rel="alternate" href="https://www.kabishou.com/" hreflang="en">
-    <!-- Open Graph -->
-    <meta property="og:title" content="Zhu Lei / kabishou11 | LLM · RAG · Agents">
-    <meta property="og:description"
-        content="Ships and operates production LLM / RAG / agent stacks at ECARX · Suzhou. Upstream contributor across Dify, AG2, RAGFlow, FlashRAG, AgentScope, and related tooling.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.kabishou.com/">
-    <meta property="og:site_name" content="Zhu Lei / kabishou11">
-    <meta property="og:locale" content="en_US">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Zhu Lei / kabishou11 | LLM · RAG · Agents">
-    <meta name="twitter:description"
-        content="Ships and operates production LLM / RAG / agent stacks at ECARX · Suzhou. Upstream contributor across Dify, AG2, RAGFlow, FlashRAG, AgentScope, and related tooling.">
-    <meta name="twitter:site" content="@Zlxhappy0_0">
-    <meta name="theme-color" content="#667eea">
-    <title>Zhu Lei / kabishou11 | LLM · RAG · Agents — Suzhou</title>
-
-    <!-- Preload critical CSS -->
-    <link rel="preload" href="assets/css/main.css?v=20261026-1" as="style">
-    <link rel="preload" href="assets/css/components.css?v=20261026-1" as="style">
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/main.css?v=20261026-1">
-    <link rel="stylesheet" href="assets/css/components.css?v=20261026-1">
-    <link rel="stylesheet" href="assets/css/animations.css?v=20261026-1">
-    <link rel="stylesheet" href="assets/css/responsive.css?v=20261026-1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Peter Zhu · kabishou11</title>
+  <meta name="description" content="Peter Zhu (朱磊) — engineer in Suzhou. Open-source contributions, inference and retrieval systems, ECARX." />
+  <meta name="author" content="Peter Zhu" />
+  <link rel="canonical" href="https://www.kabishou.com/" />
+  <meta property="og:title" content="Peter Zhu · kabishou11" />
+  <meta property="og:description" content="Engineer in Suzhou. Open source, inference &amp; retrieval, ECARX." />
+  <meta property="og:url" content="https://www.kabishou.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#fcfcfb" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-logo">🚀</div>
-        <div class="loading-text">Loading…</div>
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-        </div>
-        <div class="loading-percent" id="loadingPercent">0%</div>
-    </div>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <!-- Touch Hint for Mobile -->
-    <div class="touch-hint" id="touchHint">👆 Swipe to rotate 3D scene</div>
-
-    <!-- Easter Egg -->
-    <div class="easter-egg" onclick="showEasterEgg()"></div>
-    <div class="easter-egg-popup" id="easterEgg">
-        <h2>🎉 You Found It!</h2>
-        <p>You discovered the secret! Prefer fixes with reproducible RCA + tests. 🚀</p>
-        <button class="easter-egg-close" onclick="closeEasterEgg()">Awesome!</button>
-    </div>
-
-    <!-- 3D Canvas Background -->
-    <canvas id="canvas-3d"></canvas>
-
-    <!-- GitHub profile (replaces Download CV) -->
-    <button class="download-cv" onclick="downloadCV()">💻 GitHub</button>
-
-    <!-- Sticky Navigation -->
-    <nav id="navbar">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+  <header class="site-header">
+    <a class="logo" href="#home">PETER ZHU</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <a class="contact-pill" href="#contact">Say hello</a>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Zhu Lei / 朱磊</h1>
-            <p class="tagline">LLM serving · RAG · agent systems</p>
-        </div>
-        <div class="scroll-indicator">
-            <span class="scroll-arrow">↓</span>
-        </div>
+  <main id="main">
+    <section id="home" class="hero">
+      <p class="hero-kicker">Engineer · Open source · Suzhou</p>
+      <h1>
+        Hello, I’m Peter Zhu
+        <span class="zh">朱磊 · kabishou11</span>
+      </h1>
+      <p class="hero-sub">
+        I work on practical inference and retrieval systems, contribute upstream,
+        and ship tools people can run.
+      </p>
+      <div class="hero-meta">
+        <span>ECARX · Geely Holding</span>
+        <span>Suzhou, China</span>
+        <span>GitHub @kabishou11</span>
+      </div>
+      <p class="scroll-hint">SCROLL</p>
     </section>
 
-    <!-- About Section -->
-    <section class="section-light" id="about">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">About Me</h2>
-            <div class="about-content">
-                <div class="profile-image scroll-reveal-left">👨‍💻</div>
-                <div class="about-text scroll-reveal-right">
-                    <p>
-                        <strong>Zhu Lei</strong> (<a href="https://github.com/kabishou11" target="_blank" rel="noopener noreferrer">kabishou11</a>)
-                        ships and operates production LLM / RAG / agent stacks at
-                        <strong>ECARX</strong> (Geely Holding Group) · Suzhou, China.
-                    </p>
-                    <p>
-                        Upstream contributor to Dify, AG2, Qwen Code, RAGFlow, FlashRAG, MNN,
-                        AgentScope, Promptfoo, Qingjian, Qdrant client, and related tooling.
-                    </p>
-                    <p>
-                        Prefers fixes with reproducible RCA + tests.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section-dark" id="skills">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card scroll-reveal skill-delay-1">
-                    <div class="skill-circle">
-                        <svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
-                            <defs>
-                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" class="gradient-start" />
-                                    <stop offset="100%" class="gradient-end" />
-                                </linearGradient>
-                            </defs>
-                            <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
-                            <circle class="skill-circle-progress" cx="60" cy="60" r="54" data-percent="95"></circle>
-                        </svg>
-                        <div class="skill-percent">95%</div>
-                    </div>
-                    <div class="skill-name">Python</div>
-                </div>
-
-                <div class="skill-card scroll-reveal skill-delay-2">
-                    <div class="skill-circle">
-                        <svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
-                            <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
-                            <circle class="skill-circle-progress" cx="60" cy="60" r="54" data-percent="88"></circle>
-                        </svg>
-                        <div class="skill-percent">88%</div>
-                    </div>
-                    <div class="skill-name">TypeScript</div>
-                </div>
-
-                <div class="skill-card scroll-reveal skill-delay-3">
-                    <div class="skill-circle">
-                        <svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
-                            <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
-                            <circle class="skill-circle-progress" cx="60" cy="60" r="54" data-percent="92"></circle>
-                        </svg>
-                        <div class="skill-percent">92%</div>
-                    </div>
-                    <div class="skill-name">RAG</div>
-                </div>
-
-                <div class="skill-card scroll-reveal skill-delay-4">
-                    <div class="skill-circle">
-                        <svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
-                            <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
-                            <circle class="skill-circle-progress" cx="60" cy="60" r="54" data-percent="90"></circle>
-                        </svg>
-                        <div class="skill-percent">90%</div>
-                    </div>
-                    <div class="skill-name">LLM Ops</div>
-                </div>
-
-                <div class="skill-card scroll-reveal skill-delay-5">
-                    <div class="skill-circle">
-                        <svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
-                            <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
-                            <circle class="skill-circle-progress" cx="60" cy="60" r="54" data-percent="88"></circle>
-                        </svg>
-                        <div class="skill-percent">88%</div>
-                    </div>
-                    <div class="skill-name">OpenSearch</div>
-                </div>
-
-                <div class="skill-card scroll-reveal skill-delay-6">
-                    <div class="skill-circle">
-                        <svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
-                            <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
-                            <circle class="skill-circle-progress" cx="60" cy="60" r="54" data-percent="90"></circle>
-                        </svg>
-                        <div class="skill-percent">90%</div>
-                    </div>
-                    <div class="skill-name">Agent systems</div>
-                </div>
-
-                <div class="skill-card scroll-reveal skill-delay-1">
-                    <div class="skill-circle">
-                        <svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
-                            <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
-                            <circle class="skill-circle-progress" cx="60" cy="60" r="54" data-percent="90"></circle>
-                        </svg>
-                        <div class="skill-percent">90%</div>
-                    </div>
-                    <div class="skill-name">Dify</div>
-                </div>
-
-                <div class="skill-card scroll-reveal skill-delay-2">
-                    <div class="skill-circle">
-                        <svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
-                            <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
-                            <circle class="skill-circle-progress" cx="60" cy="60" r="54" data-percent="88"></circle>
-                        </svg>
-                        <div class="skill-percent">88%</div>
-                    </div>
-                    <div class="skill-name">Docker</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="section-light" id="experience">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">Work Experience</h2>
-            <div class="timeline" id="experience-timeline">
-                <div class="timeline-item scroll-reveal">
-                    <div class="timeline-content">
-                        <div class="timeline-title">LLM / RAG / Agent Systems</div>
-                        <div class="timeline-company">ECARX (Geely Holding Group) • Suzhou, China</div>
-                        <div class="timeline-date">Current</div>
-                        <ul>
-                            <li>Ships and operates production LLM serving, RAG, and agent stacks</li>
-                            <li>Builds hybrid search, retrieval evaluation, and agent orchestration tooling</li>
-                            <li>Works across Python / TypeScript, OpenSearch, Dify, Docker, and related infra</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item scroll-reveal">
-                    <div class="timeline-content">
-                        <div class="timeline-title">Open Source Upstream</div>
-                        <div class="timeline-company">Dify · AG2 · Qwen Code · RAGFlow · FlashRAG · MNN · AgentScope · Promptfoo · Qingjian · Qdrant client</div>
-                        <div class="timeline-date">Ongoing</div>
-                        <ul>
-                            <li>Contributes fixes and tooling with reproducible RCA + tests</li>
-                            <li>Maintains personal kits: os-hybrid-kit, dify-skills, DocForge, and more</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section-dark" id="projects">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card scroll-reveal"
-                    onclick="showModal('os-hybrid-kit', 'Portable OpenSearch hybrid search (BM25 + kNN, RRF / weighted fusion) with Dify / LangChain / LlamaIndex adapters.', 'https://github.com/kabishou11/os-hybrid-kit')">
-                    <div class="project-image">🔍</div>
-                    <div class="project-content">
-                        <div class="project-title">os-hybrid-kit</div>
-                        <div class="project-tech">OpenSearch, BM25, kNN, RRF, Dify</div>
-                        <p class="project-description">
-                            Portable hybrid search with fusion strategies and framework adapters.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card scroll-reveal project-delay-1"
-                    onclick="showModal('dify-skills', 'Executable SKILL.md runbooks for self-hosted Dify Community 1.17 — install, RAG, plugins, troubleshooting, and ops playbooks.', 'https://github.com/kabishou11/dify-skills')">
-                    <div class="project-image">📘</div>
-                    <div class="project-content">
-                        <div class="project-title">dify-skills</div>
-                        <div class="project-tech">Dify 1.17, SKILL.md, Ops</div>
-                        <p class="project-description">
-                            Executable runbooks for self-hosted Dify Community 1.17.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card scroll-reveal project-delay-2"
-                    onclick="showModal('DocForge', 'LLM document generator: topic or style-match input → Markdown / DOCX output.', 'https://github.com/kabishou11/DocForge')">
-                    <div class="project-image">📄</div>
-                    <div class="project-content">
-                        <div class="project-title">DocForge</div>
-                        <div class="project-tech">LLM, Markdown, DOCX</div>
-                        <p class="project-description">
-                            Topic or style-match → Markdown / DOCX document generation.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card scroll-reveal project-delay-3"
-                    onclick="showModal('ragflow-uploadzz', 'Utilities around RAGFlow document upload and ingestion workflows.', 'https://github.com/kabishou11/ragflow-uploadzz')">
-                    <div class="project-image">📤</div>
-                    <div class="project-content">
-                        <div class="project-title">ragflow-uploadzz</div>
-                        <div class="project-tech">RAGFlow, Ingestion</div>
-                        <p class="project-description">
-                            Helpers for RAGFlow upload and ingestion workflows.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card scroll-reveal project-delay-4"
-                    onclick="showModal('DeepVoucher', 'Open-source tooling under kabishou11 — see the GitHub repo for details.', 'https://github.com/kabishou11/DeepVoucher')">
-                    <div class="project-image">🧾</div>
-                    <div class="project-content">
-                        <div class="project-title">DeepVoucher</div>
-                        <div class="project-tech">Python, Automation</div>
-                        <p class="project-description">
-                            Open-source tooling — details on GitHub.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card scroll-reveal project-delay-5"
-                    onclick="showModal('All_Crawler', 'Crawler utilities maintained under kabishou11.', 'https://github.com/kabishou11/All_Crawler')">
-                    <div class="project-image">🕷️</div>
-                    <div class="project-content">
-                        <div class="project-title">All_Crawler</div>
-                        <div class="project-tech">Crawler, Data collection</div>
-                        <p class="project-description">
-                            Crawler utilities for data collection workflows.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Modal -->
-    <div class="modal" id="projectModal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">×</span>
-            <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
-            <a id="modalLink" href="#" target="_blank" rel="noopener noreferrer" style="display:none">View →</a>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <section class="section-light" id="contact">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">Get In Touch</h2>
-
-            <p class="contact-intro scroll-reveal">
-                Connect with me directly:
+    <section id="about" class="section">
+      <div class="section-inner">
+        <p class="section-label">About</p>
+        <h2>What I’m doing lately</h2>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I’m Peter Zhu (朱磊), an engineer based in Suzhou. At ECARX I spend most days
+              on systems that have to work in production — serving models efficiently,
+              and making search and retrieval reliable when keyword and vector signals disagree.
             </p>
-
-            <div class="contact-grid">
-                <div class="contact-card scale-reveal contact-delay-1">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <a href="mailto:woicyou@gmail.com">woicyou@gmail.com</a>
-                </div>
-                <div class="contact-card scale-reveal contact-delay-2">
-                    <div class="contact-icon">💻</div>
-                    <h3>GitHub</h3>
-                    <a href="https://github.com/kabishou11" target="_blank"
-                        rel="noopener noreferrer">github.com/kabishou11</a>
-                </div>
-                <div class="contact-card scale-reveal contact-delay-3">
-                    <div class="contact-icon">🐦</div>
-                    <h3>X / Twitter</h3>
-                    <a href="https://x.com/Zlxhappy0_0" target="_blank"
-                        rel="noopener noreferrer">@Zlxhappy0_0</a>
-                </div>
-                <div class="contact-card scale-reveal contact-delay-4">
-                    <div class="contact-icon">🌐</div>
-                    <h3>Website</h3>
-                    <a href="https://www.kabishou.com" target="_blank"
-                        rel="noopener noreferrer">www.kabishou.com</a>
-                </div>
-            </div>
+            <p>
+              Outside work I contribute to open-source projects and maintain a few focused
+              repositories of my own. I care about readable code, reproducible benches,
+              and small libraries that fit into existing stacks without ceremony.
+            </p>
+            <p>
+              If you’re looking for a long list of buzzwords, this isn’t that page.
+              Prefer talking about what shipped and what broke.
+            </p>
+          </div>
+          <dl class="about-side">
+            <dt>Name</dt>
+            <dd>Peter Zhu / 朱磊</dd>
+            <dt>Handle</dt>
+            <dd>kabishou11</dd>
+            <dt>Location</dt>
+            <dd>Suzhou, China</dd>
+            <dt>Work</dt>
+            <dd>ECARX (Geely Holding)</dd>
+            <dt>Focus</dt>
+            <dd>Inference · retrieval · open source</dd>
+          </dl>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Zhu Lei. All rights reserved.</p>
-        <p class="footer-tagline">LLM serving · RAG · agent systems · Suzhou</p>
-        <p class="footer-credit">Theme based on <a href="https://github.com/Esperadoce/CV" target="_blank"
-                rel="noopener noreferrer">Esperadoce/CV</a> (also hicham-bouchikhi/CV) · MIT</p>
-    </footer>
+    <section id="work" class="section">
+      <div class="section-inner">
+        <p class="section-label">Selected work</p>
+        <h2>Recent projects</h2>
+        <div class="work-list">
+          <a class="work-card" href="https://github.com/kabishou11/deepinfer-hopper" target="_blank" rel="noopener noreferrer">
+            <div class="work-card-top">
+              <h3>deepinfer-hopper</h3>
+              <span class="tag">Python · CUDA</span>
+            </div>
+            <p>
+              Inference engine adapted for NVIDIA H200 / Hopper (SM90) — tuned for real
+              throughput on Hopper hardware, not a generic CUDA checkbox build.
+            </p>
+            <div class="link-row">View on GitHub <span>→</span></div>
+          </a>
 
-    <!-- Application Scripts (Load as Module) -->
-    <script type="module" src="assets/js/main.js?v=20261026-1"></script>
-    <!-- Structured Data: Person -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "@id": "https://www.kabishou.com/#person",
-            "name": "Zhu Lei",
-            "alternateName": ["朱磊", "kabishou11"],
-            "url": "https://www.kabishou.com/",
-            "jobTitle": "LLM / RAG / Agent Systems",
-            "description": "Ships and operates production LLM / RAG / agent stacks at ECARX (Geely Holding Group), Suzhou. Upstream contributor to Dify, AG2, RAGFlow, FlashRAG, AgentScope, and related tooling.",
-            "email": "woicyou@gmail.com",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Suzhou",
-                "addressRegion": "Jiangsu",
-                "addressCountry": "CN"
-            },
-            "worksFor": {
-                "@type": "Organization",
-                "name": "ECARX"
-            },
-            "sameAs": [
-                "https://github.com/kabishou11",
-                "https://x.com/Zlxhappy0_0",
-                "https://www.kabishou.com"
-            ],
-            "knowsAbout": [
-                "Python", "TypeScript", "RAG", "LLM Ops", "OpenSearch",
-                "Dify", "Agent systems", "Docker", "RAGFlow", "FlashRAG"
-            ]
-        }
-    </script>
-    <!-- Structured Data: WebSite -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Zhu Lei / kabishou11 — Portfolio",
-            "url": "https://www.kabishou.com/",
-            "author": { "@id": "https://www.kabishou.com/#person" }
-        }
-    </script>
+          <a class="work-card" href="https://github.com/kabishou11/os-hybrid-kit" target="_blank" rel="noopener noreferrer">
+            <div class="work-card-top">
+              <h3>os-hybrid-kit</h3>
+              <span class="tag">Python · OpenSearch</span>
+            </div>
+            <p>
+              Portable OpenSearch hybrid search: BM25 plus kNN, fused with RRF or weighted
+              scores. Thin adapters so it drops into existing pipelines.
+            </p>
+            <div class="link-row">View on GitHub <span>→</span></div>
+          </a>
+
+          <a class="work-card" href="https://github.com/kabishou11/zvec-grep" target="_blank" rel="noopener noreferrer">
+            <div class="work-card-top">
+              <h3>zvec-grep</h3>
+              <span class="tag">Rust · CLI</span>
+            </div>
+            <p>
+              Local-first search across a workspace — ripgrep-style text, BM25, and vector
+              search behind one interface. Fork of zvec-ai/zvec-grep with ongoing work.
+            </p>
+            <div class="link-row">View on GitHub <span>→</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-inner contact-block">
+        <p class="section-label">Contact</p>
+        <h2>Find me</h2>
+        <div class="contact-links">
+          <a href="https://github.com/kabishou11" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.kabishou.com">www.kabishou.com</a>
+          <a href="https://x.com/Zlxhappy0_0" target="_blank" rel="noopener noreferrer">X · @Zlxhappy0_0</a>
+          <a href="https://xhslink.cn/o/1bGkastHIJd" target="_blank" rel="noopener noreferrer">Xiaohongshu / 小红书</a>
+          <a href="mailto:woicyou@gmail.com">Email</a>
+        </div>
+        <p class="email-line">
+          Prefer email?
+          <a href="mailto:woicyou@gmail.com">woicyou@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner">
+      <strong>PETER ZHU</strong>
+      <span>© <span id="y"></span> · kabishou11 · Suzhou</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
-
 </html>

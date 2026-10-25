@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-label="Snorlax">
+  <title>Snorlax</title>
+  <!-- Original geometric cute silhouette — not Nintendo artwork -->
+  <ellipse cx="120" cy="128" rx="78" ry="58" fill="#3d4f63"/>
+  <ellipse cx="120" cy="138" rx="52" ry="38" fill="#c9d4c0"/>
+  <ellipse cx="120" cy="62" rx="48" ry="42" fill="#3d4f63"/>
+  <ellipse cx="120" cy="72" rx="34" ry="28" fill="#c9d4c0"/>
+  <!-- ears / tufts -->
+  <ellipse cx="78" cy="42" rx="14" ry="18" fill="#3d4f63"/>
+  <ellipse cx="162" cy="42" rx="14" ry="18" fill="#3d4f63"/>
+  <ellipse cx="78" cy="46" rx="7" ry="9" fill="#c9d4c0"/>
+  <ellipse cx="162" cy="46" rx="7" ry="9" fill="#c9d4c0"/>
+  <!-- closed sleepy eyes -->
+  <path d="M98 70 q10 8 20 0" fill="none" stroke="#2a3542" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M122 70 q10 8 20 0" fill="none" stroke="#2a3542" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- small smile -->
+  <path d="M110 88 q10 8 20 0" fill="none" stroke="#2a3542" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- feet -->
+  <ellipse cx="78" cy="178" rx="26" ry="14" fill="#3d4f63"/>
+  <ellipse cx="162" cy="178" rx="26" ry="14" fill="#3d4f63"/>
+  <ellipse cx="78" cy="176" rx="16" ry="8" fill="#c9d4c0"/>
+  <ellipse cx="162" cy="176" rx="16" ry="8" fill="#c9d4c0"/>
+  <!-- arms -->
+  <ellipse cx="48" cy="120" rx="18" ry="28" fill="#3d4f63" transform="rotate(-18 48 120)"/>
+  <ellipse cx="192" cy="120" rx="18" ry="28" fill="#3d4f63" transform="rotate(18 192 120)"/>
+</svg>
