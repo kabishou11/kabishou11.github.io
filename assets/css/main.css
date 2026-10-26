@@ -739,6 +739,94 @@ body.hero-flipped .contact-pill {
   transform: translateX(4px);
 }
 
+/* Selected upstream PRs — compact list under Work */
+.upstream {
+  margin-top: 56px;
+}
+
+.upstream-lead {
+  margin: 0 0 20px;
+  max-width: 42em;
+  color: #222;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.upstream-lead a {
+  font-weight: 600;
+  border-bottom: 1px solid rgb(0 0 0 / 25%);
+}
+
+.upstream-lead a span {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.upstream-lead a:hover,
+.upstream-lead a:focus-visible {
+  border-bottom-color: #000;
+  outline: none;
+}
+
+.upstream-lead a:hover span,
+.upstream-lead a:focus-visible span {
+  transform: translateX(4px);
+}
+
+.pr-list {
+  display: grid;
+  gap: 10px;
+}
+
+.pr-item {
+  display: grid;
+  padding: 16px 22px;
+  gap: 4px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  transition:
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.pr-item:focus-visible,
+.pr-item:active {
+  border-color: #000;
+  box-shadow: 0 10px 28px rgb(0 0 0 / 4%);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.pr-item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pr-item h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.pr-item .tag {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.pr-item p {
+  margin: 0;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
 /* Contact */
 .contact-block {
   display: grid;
@@ -1073,6 +1161,12 @@ body.hero-flipped .contact-pill {
     transform: translateX(4px);
   }
 
+  .pr-item:hover {
+    border-color: #000;
+    box-shadow: 0 10px 28px rgb(0 0 0 / 4%);
+    transform: translateY(-2px);
+  }
+
   .contact-links a:hover {
     background: #000;
     border-color: #000;
@@ -1132,8 +1226,13 @@ body.hero-flipped .contact-pill {
     gap: 6px;
   }
 
-  .hobbies {
+  .hobbies,
+  .upstream {
     margin-top: 44px;
+  }
+
+  .pr-item {
+    padding: 14px 16px;
   }
 
   .snorlax--wave {
@@ -1208,7 +1307,9 @@ body.hero-flipped .contact-pill {
 
   .contact-pill,
   .work-card,
-  .work-card .link-row span {
+  .work-card .link-row span,
+  .pr-item,
+  .upstream-lead a span {
     transition: none;
   }
 }
